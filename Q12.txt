@@ -1,0 +1,22 @@
+12. O que é um ponteiro para uma função? Pesquise na Internet referências sobre o assunto e
+escreva um pequeno programa exemplificando o uso deste recurso.
+
+- Assim como os ponteiros podem apontar para variaveis e passar a ter o mesmo valor que ela, um ponteiro para função aponta para uma função e passa a ter a mesma funcionalidade que ela.
+
+-> Programa exemplo:
+#include <stdio.h>
+#include <stdlib.h>
+
+int adição(int a, int b){
+    	    return a+b;
+    	    }
+	int main(){
+    	   int (*ponteiroFuncao)(int, int);
+    	   int x;
+
+    	   ponteiroFuncao=adição;
+
+    	   x = ponteiroFuncao(2, 3);
+    	   printf("A soma eh igual a: %d \n", x);
+    	   return 0;
+	}
