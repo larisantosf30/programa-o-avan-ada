@@ -1,0 +1,23 @@
+8. O que fazem os seguintes programas em C?
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  for(i=0;i<3;i++){
+  printf("%d ",*(vet+i));
+  }
+
+-> O programa declara um vetor de numeros inteiros e declara com tres valores "4, 9 e  13". Então, cria um laço de repetição o qual irá printar os valores do vetor "vet[]".
+   O laço de repetição iniciará com uma variavel auxiliar i com o valor zero, e quebrará o laço quando a variavel for maior que tres, aumentando em 1 o valor de I a cada repetição.
+   Desta maneira, ao utilizar "(*vet+i)" o programa caminhará pela memoria do vetor "vet[]" de 4 em 4 bits, printando os numeros "4, 9 e 13";
+
+}
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  for(i=0;i<3;i++){
+  printf("%X ",vet+i);
+  }
+}
+
+-> O segundo programa é semelhante com o primeiro, mas com a utilização da linha "%X, vet+i" (diferente da questao anterior "%d ",*(vet+i)") 
+   o programa mostrará para o usuario os endereços de cada numero do vetor, e nao seus valores.

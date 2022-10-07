@@ -1,0 +1,30 @@
+5. Determine o que será mostrado pelo seguinte programa (compile-o, execute-o e verifique se
+foram obtidas as respostas esperadas).
+#include <stdio.h>
+
+int main(void){
+  float vet[5] = {1.1,2.2,3.3,4.4,5.5};
+  float *f;
+  int i;
+  f = vet;
+  printf("contador /valor /valor /endereco /endereco");
+  for(i = 0 ; i <= 4 ; i++){
+  printf("\ni = %d",i);
+  printf(" vet[%d] = %.1f",i, vet[i]);
+  printf(" *(f + %d) = %.1f",i, *(f+i));
+  printf(" &vet[%d] = %X",i, &vet[i]);
+  printf(" (f + %d) = %X",i, f+i);
+  }
+}
+
+// Os resultados obtidos estão de acordo com o esperado, pois deviam imprimir na tela: 
+// o título (contador / valor / valor / endereço / endereço), os contadores (cada um de acordo com seu loop), o valor dado para as expressões e o endereço de cada array.
+//O endereço pode variar, resultando nos seguintes endereços v[0]= 580A68B0; v[1]= 580A68B4; v[2]= 580A68B8; v[3]= 580A68BC e v[4]= 580A68C0.
+
+-> Saída:
+contador /valor /valor /endereco /endereco
+i = 0 vet[0] = 1.1 *(f + 0) = 1.1 &vet[0] = 580A68B0 (f + 0) = 580A68B0
+i = 1 vet[1] = 2.2 *(f + 1) = 2.2 &vet[1] = 580A68B4 (f + 1) = 580A68B4
+i = 2 vet[2] = 3.3 *(f + 2) = 3.3 &vet[2] = 580A68B8 (f + 2) = 580A68B8
+i = 3 vet[3] = 4.4 *(f + 3) = 4.4 &vet[3] = 580A68BC (f + 3) = 580A68BC
+i = 4 vet[4] = 5.5 *(f + 4) = 5.5 &vet[4] = 580A68C0 (f + 4) = 580A68C0

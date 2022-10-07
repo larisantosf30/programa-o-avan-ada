@@ -1,0 +1,18 @@
+7. Considerando a declaração int mat[4], *p, x;, quais das seguintes expressões são válidas?
+Justifique.
+p = mat + 1;
+p = mat++;
+p = ++mat;
+x = (*mat)++;
+
+#include <stdio.h>
+
+int main(void){
+  int mat [4];
+  int *p,x;
+  
+  p = mat + 1; //A expressão é válida, visto que o ponteiro p irá receber o endereço mat[1], que representa a segunda posição do vetor
+  p = mat++; // A expressão não é válida, pois não podemos incrementar um valor do tipo int, logo devemos utilizar ele para incrementar o valor guardado em alguma das posições
+  p = ++mat; // A expressão também não é válida, pelo mesmo motivo que a anterior, porque mudar a ordem do incremento não altera em nada nesse caso
+  x = (*mat)++; // A expressão é válida, já que estamos pegando o valor que está guardado no endereço mat[0] e incrementando-o
+  }
